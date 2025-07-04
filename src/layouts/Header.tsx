@@ -7,7 +7,6 @@ import LanguageSelector from '@/components/about/language-selector';
 import ScrollProgressBar from '@/components/common/ScrollProgressBar';
 import { Button } from '@/components/ui/button';
 import { useSpyElem } from '@/hook/useSpy';
-import ThemeSwitch from '@/layouts/theme/Switch';
 import { cn } from '@/lib/utils';
 import { Github } from 'lucide-react';
 
@@ -50,7 +49,6 @@ export const Header = () => {
         {isLocalePath && <LanguageSelector className='hidden sm:flex' />}
 
         <div className='flex gap-3'>
-          <ThemeSwitch />
           <Button asChild variant='ghost' size='icon'>
             <Link href='https://github.com/d5br5/nextjs-tailwind-blog' target='_blank'>
               <Github className='size-[1.2rem]' />
