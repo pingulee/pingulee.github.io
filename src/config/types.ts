@@ -6,7 +6,6 @@ export interface PostMatter {
   dateString: string;
   thumbnail: string;
   desc: string;
-  isHot?: boolean;
 }
 
 export interface Post extends PostMatter {

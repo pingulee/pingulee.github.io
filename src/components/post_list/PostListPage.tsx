@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import CategoryList from './CategoryList';
 import PostCard from './PostCard';
 import { Post } from '@/config/types';
-import { getAllPostCount, getCategoryDetailList, getHotPostCount } from '@/lib/post';
+import { getAllPostCount, getCategoryDetailList } from '@/lib/post';
 
 interface PostListProps extends React.HTMLAttributes<HTMLDivElement> {
   postList: Post[];
@@ -12,7 +12,6 @@ interface PostListProps extends React.HTMLAttributes<HTMLDivElement> {
 const PostListPage = async ({ category, postList, className, ...props  }: PostListProps) => {
   const categoryList = await getCategoryDetailList();
   const allPostCount = await getAllPostCount();
-  const hotPostCount = await getHotPostCount();
 
   return (
     <section className={cn('mx-auto w-full max-w-[1200px] px-4 mt-10', className)} {...props}>
@@ -21,7 +20,6 @@ const PostListPage = async ({ category, postList, className, ...props  }: PostLi
         <CategoryList
           allPostCount={allPostCount}
           categoryList={categoryList}
-          hotPostCount={hotPostCount}
           currentCategory={category}
         />
       </div>
